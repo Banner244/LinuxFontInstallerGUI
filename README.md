@@ -1,5 +1,5 @@
 # LinuxFontInstallerGUI
-Very simple Font Installer for Linux Systems for .ttf files.
+Very simple Font Installer for Linux Systems for .ttf and .otf files.
 
 Using Gtkmm 4.
 

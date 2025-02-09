@@ -53,7 +53,7 @@ MyWindow::MyWindow()
       addButton("Add!"),
       installButton("Install Font/s")
 	{
-	set_default_size(200, 200);
+	set_default_size(500, 600);
     set_title("Font Installer");
 
 	// Css initialisation
@@ -62,20 +62,22 @@ MyWindow::MyWindow()
 	// HeaderBar erstellen
 	initHeadBar();
 
+    // ScrolledWindow
+    scrolledWindowListBox.set_policy(Gtk::PolicyType::AUTOMATIC, Gtk::PolicyType::AUTOMATIC);
+    scrolledWindowListBox.set_child(listBox);
+	scrolledWindowListBox.set_expand();
+	//scrolledWindowListBox.set_halign(Gtk::);
 
 	listBox.set_name("listbox");
 //inputHBox.set_margin(3);
 	rootVBox.set_margin(10);
-
-
-
 
     // Button in den Box-Container einfügen
     inputHBox.append(addButton);
     inputHBox.append(installButton);
 
 	rootVBox.append(inputHBox);
-	rootVBox.append(listBox);
+	rootVBox.append(scrolledWindowListBox);
     // Signal-Handler für den Button verbinden
     addButton.signal_clicked().connect(sigc::mem_fun(*this, &MyWindow::onButtonClicked));
     installButton.signal_clicked().connect(sigc::mem_fun(*this, &MyWindow::onInstallButtonClicked));

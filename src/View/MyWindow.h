@@ -28,6 +28,7 @@ class MyWindow : public Gtk::Window {
 		Gtk::Button addButton;
 		Gtk::Button installButton;
 		Gtk::Box rootVBox;
+		Gtk::ScrolledWindow scrolledWindowListBox;
 		Gtk::Box inputHBox;
 		Gtk::ListBox listBox;
 };

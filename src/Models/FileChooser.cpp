@@ -57,6 +57,11 @@ void FileChooser::reset() {
 }
 
 bool FileChooser::hasRightExtension(std::string &font) {
-	std::string extension = ".ttf";
-	return font.size() >= extension.size() && font.compare(font.size() - extension.size(), extension.size(), extension) == 0;
+	std::string extensions[] ={ ".ttf", ".otf" };
+    for (const auto& ext : extensions) {
+        if (font.size() >= ext.size() && font.compare(font.size() - ext.size(), ext.size(), ext) == 0) {
+            return true;
+        }
+    }
+    return false;
 }
