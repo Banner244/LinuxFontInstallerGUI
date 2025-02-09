@@ -13,7 +13,6 @@ Press "Install Font/s" and you are done.
 Make sure you have installed gtkmm 4.
 To compile (in project dir):
 ```
-rm -rf build bin
 cmake -S . -B build/
 make -C ./build
 ```
