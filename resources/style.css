@@ -1,0 +1,20 @@
+.custom-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#listbox {
+    background-color: transparent; /* Hintergrund transparent */
+}
+
+#listbox-item {
+    border-radius: 10px;  /* Runden der Ecken */
+    background-color: #1060db;
+    color: white;
+    padding: 5px;         /* Innenabstand */
+	margin: 10px; /* Abstand zwischen den Items */
+}
+
+#listbox-item:hover {
+    background-color: #2980b9; /* Effekt bei Hover */
+}
