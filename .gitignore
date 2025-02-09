@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+.git/
+.cache/
+.vscode/
+create.sh
+quick.sh
+bin/
+build/
