@@ -13,7 +13,7 @@ void FileChooser::openFileDialog(std::shared_ptr<MyWindow> myWindow, std::functi
                 if (response_id == Gtk::ResponseType::OK) {
                     auto folder = dialog->get_file(); 
                     if (folder) {
-                        std::cout << "Ausgewählter Ordner: " 
+                        std::cout << "Selected Folder: " 
                                   << folder->get_basename() << std::endl;
 
 						this->folderName = folder->get_basename();
@@ -22,12 +22,12 @@ void FileChooser::openFileDialog(std::shared_ptr<MyWindow> myWindow, std::functi
 						addItem();
                     }
                 } else {
-                    std::cout << "Abgebrochen." << std::endl;
+                    std::cout << "Canceled" << std::endl;
                 }
                 dialog->hide();  // closes the dialog window 
     });
 
-    dialog->present();  // Zeigt den Dialog an
+    dialog->present();
 }
 
 void FileChooser::fillFontList() {
@@ -35,7 +35,7 @@ void FileChooser::fillFontList() {
     
     try {
         Glib::RefPtr<Gio::FileEnumerator> enumerator = folder->enumerate_children(
-            G_FILE_ATTRIBUTE_STANDARD_NAME, // Hier ist die Korrektur!
+            G_FILE_ATTRIBUTE_STANDARD_NAME, 
             Gio::FileQueryInfoFlags::NONE);
 
         Glib::RefPtr<Gio::FileInfo> fileInfo;
@@ -43,12 +43,17 @@ void FileChooser::fillFontList() {
 			std::string fileName = fileInfo->get_name();
 			if(hasRightExtension(fileName)) {
 				fonts.push_back(fileName);
-				std::cout << "These: " << fileInfo->get_name() << std::endl;
 			}
         }
     } catch (const Glib::Error& e) {
         std::cerr << "Could not read the directory: " << e.what() << std::endl;
     }
+}
+
+void FileChooser::reset() {
+	absolutePath = "";
+	folderName = "";
+	fonts.clear();
 }
 
 bool FileChooser::hasRightExtension(std::string &font) {

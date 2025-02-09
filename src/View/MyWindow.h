@@ -19,7 +19,8 @@ class MyWindow : public Gtk::Window {
 		void setMyWindowListener(IMyWindow* myWindowListener) {
 			this->myWindowListener = myWindowListener;	
 		}
-
+		
+		void clearListBox();
 
 	protected:
 		void onButtonClicked();

@@ -35,6 +35,10 @@ void MyWindow::addItemToList(const Glib::ustring& text) {
 
 }
 
+void MyWindow::clearListBox() {
+	listBox.remove_all();
+}
+
 void MyWindow::onButtonClicked() {
 	this->myWindowListener->onButtonClicked();
 }

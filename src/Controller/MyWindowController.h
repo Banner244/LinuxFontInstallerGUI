@@ -19,4 +19,7 @@ class MyWindowController : public IMyWindow {
 		std::shared_ptr<MyWindow> myWindow;
 		FileChooser filechooser;
 		std::string execCommand(const char* cmd); 
+
+		void clearItems();
+		void openInfoDialog(std::string info);
 };
