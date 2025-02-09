@@ -1,5 +1,5 @@
 # LinuxFontInstallerGUI
-Very simple Font Installer for Linux Systems
+Very simple Font Installer for Linux Systems for .ttf files.
 
 Using Gtkmm 4.
 
@@ -16,3 +16,5 @@ To compile (in project dir):
 cmake -S . -B build/
 make -C ./build
 ```
+# Preview
+![screenshot](https://github.com/Banner244/LinuxFontInstallerGUI/blob/main/screens/usage.gif)
